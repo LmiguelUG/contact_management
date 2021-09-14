@@ -1,0 +1,18 @@
+<html>
+     <head>
+          <title>Contact Form</title>
+     </head>
+     <body>
+     <form action='' method="POST">
+          <?php echo $this->contact_form->getElement('name'); ?>
+
+		  <?php echo $this->contact_form->getElement('surname'); ?>
+		  
+		  <?php echo $this->contact_form->getElement('email'); ?>
+ 
+          <?php echo $this->contact_form->getElement('contact'); ?>
+ 
+          <?php echo $this->contact_form->getElement('submit'); ?>
+     </form>
+     </body>
+</html>
