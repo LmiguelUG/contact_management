@@ -1,0 +1,15 @@
+<html>
+     <head>
+     <title>Edit Contact</title>
+     </head>
+     <body>
+          <h1>Edit Contact</h1>
+          <form action='' method="POST">
+               <?php echo $this->contact_form->getElement('name')->setValue($this->contact->name); ?>
+               <?php echo $this->contact_form->getElement('surname')->setValue($this->contact->surname); ?>
+               <?php echo $this->contact_form->getElement('email')->setValue($this->contact->email); ?>
+               <?php echo $this->contact_form->getElement('telephone')->setValue($this->contact->telephone); ?>
+               <?php echo $this->contact_form->getElement('submit')->setLabel('Update Contact'); ?>
+          </form>
+     </body>
+</html>

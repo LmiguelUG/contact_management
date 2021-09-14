@@ -1,4 +1,31 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Contact</b> and script/action name <b>index</b></p>
-</div>
+<html>
+     <head>
+     <title>Contacts List</title>
+     </head>
+     <body>
+          <h1>Contacts List</h1>
+          <table>
+          <tr>
+               <th>Name</th>
+			   <th>surname</th>
+			   <th>email</th>
+               <th>Contact Number</th>
+               <th colspan="2">Action</th>
+         </tr>
+ 
+         <?php 
+              foreach ($this->contacts as $contact)  {
+				  
+                    echo "<tr>";
+                    echo "<td>" . $contact->name . "</td>";
+					echo "<td>" . $contact->surname . "</td>";
+					echo "<td>" . $contact->email . "</td>";
+                    echo "<td>" . $contact->telephone . "</td>";
+                    echo "<td colspan='2'><a href='" . $this->url(array('controller' => 'contact', 'action' => 'edit', 'id' => $contact->id)) . "' >Edit</a>";
+                    echo " <a href='" . $this->url(array('controller' => 'contact', 'action' => 'delete', 'id' => $contact->id)) . "' onclick='return confirm(\"Do you really want to delete this contact?\");'>Delete</a></td>";
+                    echo "</tr>";
+             }
+       ?>
+       </table>
+     </body>
+</html>

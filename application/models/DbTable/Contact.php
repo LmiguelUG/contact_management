@@ -15,9 +15,22 @@ class Application_Model_DbTable_Contact extends Zend_Db_Table_Abstract
             'email'     => $reuqest->getPost('email'),
             'telephone' => $reuqest->getPost('telephone')
         );
-        $this->insert($data);
-        
+        $this->insert($data); 
     }
+
+    public function edit() {
+        
+        $front = Zend_Controller_Front::getInstance();
+        $request = $front->getRequest();
+        $data = array(
+            'name'      => $request->getPost('name'),
+            'surname'   => $request->getPost('surname'),
+            'email'     => $request->getPost('email'),
+            'telephone' => $request->getPost('telephone')
+        );
+        $where = array('id = ?' => $request->getParam("id"));
+        $this->update($data, $where);
+   }
 
 
 }
