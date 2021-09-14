@@ -3,18 +3,21 @@
 class ContactController extends Zend_Controller_Action
 {
 
-    public function init() {
+    public function init()
+    {
         
     }
 
-    public function indexAction() {
+    public function indexAction()
+    {
 
         $contact_model = new Application_Model_DbTable_Contact(); 
         $contacts = $contact_model->fetchAll();
         $this->view->contacts = $contacts;
     }
 
-    public function createAction() {
+    public function createAction()
+    {
        $contact_form = new Application_Form_Contact();
        $request     = $this->getRequest();
        if($request->ispost()) {
@@ -28,7 +31,8 @@ class ContactController extends Zend_Controller_Action
        $this->view->contact_form = $contact_form;
     }
 
-    public function editAction() {
+    public function editAction()
+    {
         
         $request       = $this->getRequest();
         $id            = $request->getParam('id');
@@ -44,7 +48,18 @@ class ContactController extends Zend_Controller_Action
     }
 
 
+    public function deleteAction()  {
+
+        $contact_model = new Application_Model_DbTable_Contact();
+        $contact_model->deleteContact();
+        $this->_redirect('contact/edit?id=2');
+        
+    }
+
+
 }
+
+
 
 
 

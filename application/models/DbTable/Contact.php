@@ -33,5 +33,13 @@ class Application_Model_DbTable_Contact extends Zend_Db_Table_Abstract
    }
 
 
+    public function deleteContact()  {
+
+        $front = Zend_Controller_Front::getInstance();
+        $request = $front->getRequest();
+        $where = array('id = ?' => $request->getParam("id"));
+        $this->delete($where);
+
+    }
 }
 
