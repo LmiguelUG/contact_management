@@ -1,30 +1,6 @@
-README
-======
+A simple contact management module using the Zend framework 1.12.20.
 
-This directory should be used to place project specfic documentation including
-but not limited to project notes, generated API/phpdoc documentation, or
-manual files generated or hand written.  Ideally, this directory would remain
-in your development environment only and should not be deployed with your
-application to it's final production location.
+Zend Framework is an object-oriented, open source web application framework for PHP 5.
+Zend Framework is often referred to as a "component library" because it has many loosely coupled components that you can use more or less independently. 
+But Zend Framework also provides an advanced Model-View-Controller (MVC) implementation that can be used to establish a basic structure for your Zend Framework applications. 
 
-
-Setting Up Your VHOST
-=====================
-
-The following is a sample VHOST you might want to consider for your project.
-
-<VirtualHost *:80>
-   DocumentRoot "C:/xampp/htdocs/project_zend/public"
-   ServerName .local
-
-   # This should be omitted in the production environment
-   SetEnv APPLICATION_ENV development
-
-   <Directory "C:/xampp/htdocs/project_zend/public">
-       Options Indexes MultiViews FollowSymLinks
-       AllowOverride All
-       Order allow,deny
-       Allow from all
-   </Directory>
-
-</VirtualHost>
